@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +13,13 @@ export class LoginComponent implements OnInit {
     username:new FormControl(),
     password:new FormControl(),
   })
-  constructor() { }
+  constructor(private custservice:CustomerService) { }
 
   ngOnInit() {
+    this.custservice.getcustomer();
   }
-  saveiit(){
-     console.log(this.userfrom.value);
+  checkloginc(){
+    this.custservice.checklogins(this.userfrom.value);
+   //  this.custservice.checklogins(JSON.stringify(this.userfrom.value));
   }
 }
