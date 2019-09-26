@@ -18,11 +18,20 @@ export class CustomerService {
       
     })
   }
-  public checklogins(logindetails){
+  public checkloginsUser(logindetails){
     console.log(logindetails);
-    return this.http.post("http://localhost:8080/api/login",logindetails)
-    .subscribe(data=>{
-      console.log(data);
-    });
+    return this.http.post("http://localhost:8080/customer/login",logindetails)
+  }
+  public checkloginsOwner(logindetails){
+    console.log(logindetails);
+    return this.http.post("http://localhost:8080/owner/login",logindetails)
+  }
+  public saveUserRegisterDetailss(registerDetails){
+    return this.http.post("http://localhost:8080/customer/registerUser",registerDetails,{responseType: 'text'})
+  }
+  public saveOwnerRegisterDetailss(registerDetails){
+    console.log(registerDetails);
+    return this.http.post("http://localhost:8080/owner/registerOwner",registerDetails,{responseType: 'text'})
+    console.log(registerDetails);
   }
 }

@@ -10,6 +10,9 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './register/register.component';
+import { OwnerNavbarComponent } from './owner/owner-navbar/owner-navbar.component';
+import { BookingComponent } from './owner/booking/booking.component';
+ 
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     NavbarComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    OwnerNavbarComponent,
+    BookingComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -27,6 +33,7 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     AppRoutingModule
   ],
+   
   providers: [],
   bootstrap: [AppComponent]
 })
