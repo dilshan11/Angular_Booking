@@ -12,6 +12,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { OwnerNavbarComponent } from './owner/owner-navbar/owner-navbar.component';
 import { BookingComponent } from './owner/booking/booking.component';
+import { NewhotelComponent } from './owner/newhotel/newhotel.component';
+import { WelcomownerComponent } from './owner/welcomowner/welcomowner.component';
+import { TutorialComponent } from './owner/tutorial/tutorial.component';
+import { BasicsComponent } from './owner/newhotel/basics/basics.component';
  
 
 @NgModule({
@@ -23,6 +27,10 @@ import { BookingComponent } from './owner/booking/booking.component';
     RegisterComponent,
     OwnerNavbarComponent,
     BookingComponent,
+    NewhotelComponent,
+    WelcomownerComponent,
+    TutorialComponent,
+    BasicsComponent,
     
   ],
   imports: [

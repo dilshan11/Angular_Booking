@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomerService } from '../customer.service';
 import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
     password:new FormControl('',Validators.required),
     userst:new FormControl(1)
   })
-  constructor(private custservice:CustomerService,private router:Router) { 
+  constructor(private custservice:CustomerService,private router:Router,private dataservice:DataService) { 
     
   }
 
@@ -44,7 +45,8 @@ export class LoginComponent implements OnInit {
       console.log(data);
       if(data!=null){         //check email correct and send ownerEntity object
         this.loginstate=true;
-        this.router.navigate(['/booking'])
+        this.dataservice.sendmessagetoOwnernavbar(true);
+        this.router.navigate(['/owners'])    //naviagete to owner welcme
         }else{
           this.loginstate=false;
         }
