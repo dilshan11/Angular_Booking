@@ -8,11 +8,17 @@ import { DataService } from './data.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  ownerdetails;
     navbarstate:any=false;
   constructor(private dataservice:DataService){
-    dataservice.ownernavbarstate$
-    .subscribe(data=>{
-      this.navbarstate=data;
-    })
+    // dataservice.ownernavbarstate$
+    // .subscribe(data=>{
+    //   this.navbarstate=data;
+    // })
+    // this.dataservice.$ownerDetailState
+    // .subscribe(data=>{
+    //   this.ownerdetails=data;
+    //   // console.log(this.ownerdetails);
+    // });
   }
 }

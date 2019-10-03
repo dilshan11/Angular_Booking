@@ -42,10 +42,12 @@ export class LoginComponent implements OnInit {
   else{                       // asser owner check
     this.custservice.checkloginsOwner(this.logindata)
     .subscribe(data=>{
-      console.log(data);
+      
       if(data!=null){         //check email correct and send ownerEntity object
         this.loginstate=true;
-        this.dataservice.sendmessagetoOwnernavbar(true);
+         this.dataservice.passownerobject(data);  //pass owner deyails login to basics
+          
+        
         this.router.navigate(['/owners'])    //naviagete to owner welcme
         }else{
           this.loginstate=false;

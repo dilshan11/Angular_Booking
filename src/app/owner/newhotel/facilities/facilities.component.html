@@ -1,0 +1,142 @@
+<!-- frist div for topic -->
+
+<div class="homediv p-4">
+    <form [formGroup]="facility">
+        <div class="container  ">
+
+            <div class="row">
+
+                <div class="col-md-9 p-0">
+                    <h3 class="font-weight-bolder mt-4">All the little things (and big things) you provide.</h3>
+                    <p>What comes with your home?</p>
+                </div>
+                <div class="col-md-3 ">
+
+                    <img src="../../../../assets/service.jpg" class="img-fluid" alt="Responsive image">
+                </div>
+
+            </div>
+        </div>
+        <!-- frist div for topic -->
+        <div class="mx-3"><h5>Facilities</h5><p>What travelers are looking for and might increase the chances of you getting more bookings.
+
+        </p></div>
+        <!-- basic information -->
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-9 p-4 white border border-default-color rounded mb-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <mdb-checkbox formControlName="outdoor_pool" [default]="true">Outdoor pool</mdb-checkbox>
+                                <mdb-checkbox formControlName="dryer" [default]="true">Dryer</mdb-checkbox>
+                                <mdb-checkbox formControlName="indoor_pool" [default]="true">Indoor pool</mdb-checkbox>
+
+                            </div>
+                            <div class="col-md-4">
+                                <mdb-checkbox formControlName="hot_tub" [default]="true">Hot tub</mdb-checkbox>
+                                <mdb-checkbox formControlName="free_parking" [default]="true">Free parking</mdb-checkbox>
+                                <mdb-checkbox formControlName="gym" [default]="true">Gym</mdb-checkbox>
+                            </div>
+                            <div class="col-md-4">
+                                <mdb-checkbox formControlName="heating" [default]="true">Heating</mdb-checkbox>
+                                <mdb-checkbox formControlName="closet" [default]="true">Closet</mdb-checkbox>
+                                <mdb-checkbox formControlName="fireplace" [default]="true">fireplace</mdb-checkbox>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Default unchecked -->
+                     
+                    
+                    
+                     
+                </div>
+                <div class="col-md-3">
+                    <!-- Material unchecked -->
+                   
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="mx-3 mt-5"><h5> Location</h5><p>What travelers want to have a convenient stay.</p></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 p-4 white border border-default-color rounded mb-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <mdb-checkbox formControlName="entrance" [default]="true">Private entrance</mdb-checkbox>
+                                <mdb-checkbox formControlName="elevator" [default]="true">Elevator</mdb-checkbox>
+
+
+                            </div>
+                            <div class="col-md-4">
+                                <mdb-checkbox formControlName="wheelchair" [default]="true">Wheelchair accessible</mdb-checkbox>
+                                
+                            </div>
+                            <div class="col-md-4">
+                                <mdb-checkbox formControlName="doorman" [default]="true">Doorman</mdb-checkbox>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+
+        <div class="mx-3 mt-5"><h5> Kitchen</h5><p>Facilities and amenities that allow travelers to eat and drink comfortably.</p></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 p-4 white border border-default-color rounded mb-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <mdb-checkbox formControlName="breakfast" [default]="true">Breakfast</mdb-checkbox>
+                                <mdb-checkbox formControlName="tea" [default]="true">Tea</mdb-checkbox>
+
+
+                            </div>
+                            <div class="col-md-4">
+                                <mdb-checkbox formControlName="coffee" [default]="true">Coffee</mdb-checkbox>
+                                <mdb-checkbox formControlName="teamaker" [default]="true">Coffee/tea maker</mdb-checkbox>
+
+                            </div>
+                            <div class="col-md-4">
+                                <mdb-checkbox formControlName="kitchen" [default]="true">Kitchen</mdb-checkbox>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+
+        
+    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row mt-3 d-flex justify-content-end">
+                    <div>
+                        <button mdbBtn flat="true" size="sm">Cancel</button>
+                        <button mdbBtn color="primary" size="sm" (click)=ok()>Next</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>
+
+</div>

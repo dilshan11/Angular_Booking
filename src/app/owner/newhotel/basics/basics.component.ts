@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { timingSafeEqual } from 'crypto';
+import { BasicService } from '../basic.service';
+import { DataService } from 'src/app/data.service';
+import { Router } from '@angular/router';
+ 
 declare var ol: any;
 @Component({
   selector: 'app-basics',
@@ -10,13 +13,13 @@ declare var ol: any;
 export class BasicsComponent implements OnInit {
   latitude: number = 18.5204;
   longitude: number = 73.8567;
-
+  ownDetals;
   map: any;
   divbox;
   geolocation;
   iconFeature;
   ptype;  // proert type variable
-  propertobject:{pname:String,sadress:String,village:String,city:String,ptype:String}={pname:null,sadress:null,village:null,city:null,ptype:null};
+  propertobject:{pname:String,sadress:String,village:String,city:String,ptype:String,ownerId:number }={pname:null,sadress:null,village:null,city:null,ptype:null,ownerId:null};
 
   basicform=new FormGroup({
     pname:new FormControl('',Validators.required),
@@ -24,8 +27,8 @@ export class BasicsComponent implements OnInit {
     village:new FormControl('',Validators.required),
     city:new FormControl('',Validators.required)
   })
-
-  constructor() {
+fieldvalue=[];
+  constructor(private basicservice:BasicService,private dataservice:DataService,private router:Router) {
     
    }
 
@@ -43,13 +46,33 @@ export class BasicsComponent implements OnInit {
       })
        
     });
+        this.ownDetals=this.dataservice.ownerdetails;
+        console.log(this.ownDetals);
   }
+
+
   submitPropertyForm(){ 
+    if(this.validate_field()){
     this.propertobject.pname=this.basicform.get('pname').value;
        this.propertobject.sadress =this.basicform.get('sadress').value;
         this.propertobject.village =this.basicform.get('village').value;
         this.propertobject.city =this.basicform.get('city').value;
-    console.log(this.propertobject);
+        this.propertobject.ownerId=this.ownDetals.id;
+        console.log(this.propertobject);
+        this.basicservice.store_basicform(this.propertobject).
+        subscribe(data=>{
+          console.log("faci")
+            this.router.navigateByUrl('/owners/newHotel/facilities');
+        });
+    }
+  }
+  validate_field(){
+    this.fieldvalue[4]=this.ptype==null?true:false;
+    this.fieldvalue[0]=this.basicform.get('pname').invalid;
+    this.fieldvalue[1]=this.basicform.get('sadress').invalid;     //validate 4 field
+    this.fieldvalue[2]=this.basicform.get('village').invalid;
+    this.fieldvalue[3]=this.basicform.get('city').invalid;
+    return !this.fieldvalue[0]&&!this.fieldvalue[1]&&!this.fieldvalue[2]&&!this.fieldvalue[3]&&!this.fieldvalue[4];
   }
   property_type1(box1,box2){     //select which property type
       box1.style.color="#00695c";

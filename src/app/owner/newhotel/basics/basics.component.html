@@ -25,7 +25,7 @@
         <div class="col-md-9 p-4 white border border-default-color rounded mb-0">
                 <div>proprty type</div>
                 <div class="container mt-2">
-                    <div class="row itembox">
+                    <div class="row itembox md-form">
                         <div class="col-2 divbox" #divbox1 (click)=property_type1(divbox1,divbox2)>
                              <mdb-icon fas icon="hotel" size="3x"></mdb-icon>
                             <p>Hotel</p>
@@ -34,16 +34,21 @@
                             <mdb-icon fas icon="home" size="3x"></mdb-icon>
                             <p>House</p>
                         </div>
-
+                         
+                                <mdb-error class="mt-5" *ngIf="fieldvalue[4]">choosing one is required</mdb-error>
+        
+                        
                     </div>
-                </div>
 
+                </div>
+                
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="md-form">
                                 <input formControlName="pname" mdbInput type="text" id="form1" class="form-control">
                                 <label for="form1" class="">Property Name</label>
+                                <mdb-error *ngIf="fieldvalue[0]">Frist name is required</mdb-error>
                             </div>
                         </div>
                     </div>
@@ -67,16 +72,19 @@
                 <div class="md-form">
                     <input formControlName="sadress" mdbInput type="text" id="form2" class="form-control">
                     <label for="form2" class="">Street address</label>
+                    <mdb-error *ngIf="fieldvalue[1]">Street address is required</mdb-error>
                 </div>
 
                 <div class="md-form">
                     <input formControlName="village" mdbInput type="text" id="form3" class="form-control">
                     <label for="form3" class="">Village</label>
+                    <mdb-error *ngIf="fieldvalue[2]">Village is required</mdb-error>
                 </div>
 
                 <div class="md-form">
                         <input formControlName="city" mdbInput type="text" id="form4" class="form-control">
                         <label for="form4" class="">City</label>
+                        <mdb-error *ngIf="fieldvalue[3]">City is required</mdb-error>
                 </div>
                     <!-- map api openlayer -->
                 <div id="map" class="map"></div>
@@ -92,7 +100,7 @@
             <div class="col-md-9">
                     <div class="row mt-3 d-flex justify-content-end">
                             <div >
-                              <button mdbBtn flat="true"  size="sm">Cancel</button>
+                              <button mdbBtn flat="true"   size="sm" >previous</button>
                               <button mdbBtn color="primary" size="sm" (click)="submitPropertyForm()">Next</button>
                             </div>
                           </div>

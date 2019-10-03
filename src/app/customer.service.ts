@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class CustomerService {
- 
+  ownerdetails;
 
   constructor(private http:HttpClient) { }
 
@@ -32,6 +32,7 @@ export class CustomerService {
   public saveOwnerRegisterDetailss(registerDetails){
     console.log(registerDetails);
     return this.http.post("http://localhost:8080/owner/registerOwner",registerDetails,{responseType: 'text'})
+    this.ownerdetails=registerDetails;
     console.log(registerDetails);
   }
 }
