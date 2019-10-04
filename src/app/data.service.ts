@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class DataService {
   ownerdetails;
+  hotelid;
   // private _ownernavbarstatesource=new Subject<boolean>();       //componenet data sharing loggin to owner navbar
   // ownernavbarstate$=this._ownernavbarstatesource.asObservable();
 
@@ -22,5 +23,8 @@ export class DataService {
   // }
   public passownerobject(own){
     this.ownerdetails=own;
+  }
+  public setHotelid(hid){
+    this.hotelid=hid;
   }
 }

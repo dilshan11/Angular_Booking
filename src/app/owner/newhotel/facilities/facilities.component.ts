@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { BasicService } from '../basic.service';
+import { DataService } from 'src/app/data.service';
+import { Router } from '@angular/router';
+ 
 
 @Component({
   selector: 'app-facilities',
@@ -7,6 +11,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./facilities.component.scss']
 })
 export class FacilitiesComponent implements OnInit {
+  hotelid;
   facility = new FormGroup({
     outdoor_pool: new FormControl(),
     dryer: new FormControl(),
@@ -25,18 +30,26 @@ export class FacilitiesComponent implements OnInit {
  
     breakfast: new FormControl(),
     tea: new FormControl(),
-    coffe: new FormControl(),
+    coffee: new FormControl(),
     teamaker: new FormControl(),
     kitchen: new FormControl(),
 
     
   });
 
-  constructor() { }
+  constructor(private basicservice:BasicService,private dataservice:DataService,private router:Router) { }
 
   ngOnInit() {
+    this.hotelid=this.dataservice.hotelid;
   }
-  ok(){
-    console.log(this.facility.value);
+
+  sendfacility_form(){
+     this.basicservice.storefacilities(this.facility.value).
+     subscribe(data=>{
+       if(data){
+        this.router.navigateByUrl('/owners/newHotel/rooms');
+       }
+       console.log(data);
+     });
   }
 }

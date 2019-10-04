@@ -1,0 +1,128 @@
+<!-- frist div for topic -->
+
+<div class="homediv p-4">
+     
+        <div class="container  ">
+
+            <div class="row">
+
+                <div class="col-md-9 p-0">
+                    <h3 class="font-weight-bolder mt-4">Rooms Details</h3>
+                    <p>show them all your rooms</p>
+                </div>
+                <div class="col-md-3 ">
+
+                    <img src="../../../../assets/rooms.jpg" class="img-fluid" alt="Responsive image">
+                </div>
+
+            </div>
+        </div>
+        <!-- frist div for topic -->
+        <!-- <div class="mx-3"><h5>room1</h5></div> -->
+        <!-- basic information -->
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-9  p-4 white border border-default-color rounded mb-0">
+                <form [formGroup]="room">
+                    <div>
+                        <select formControlName="rtype"  class="browser-default custom-select">
+                            <option selected>select Room type</option>
+                            <option value="single">single</option>
+                            <option value="double">Double</option>
+                            <option value="triple">Triple</option>
+                            <option value="quad">quad</option>
+                            <option value="queen">queen</option>
+                            <option value="twin">Twin</option>
+                        </select>
+                    </div>
+                    <p class="mt-5"> sleepers per room</p>
+                    <div class="d-flex">
+
+
+                        <button type="button" mdbBtn class="default-color " (click)=addsleeper()
+                            mdbWavesEffect>+</button>
+                        <!-- {{sleepers}} -->
+                        <div class="md-form mt-1 roomdiv">
+                            <input formControlName="sleppers" mdbInput type="text" id="form1" class="mx-1 form-control">
+                            <!-- <label for="form1" class="">Example label</label> -->
+                        </div>
+                        <button type="button" mdbBtn class="default-color " (click)=removesleeper()
+                            mdbWavesEffect>-</button>
+                    </div>
+                    <div class="md-form">
+                        <input formControlName="price" mdbInput type="text" id="form2"   class="form-control">
+                        <label for="form2" class="bg-red">price per two night</label>
+                    </div>
+
+                    <p class="mt-5"> amount of this category rooms</p>
+                    <div class="d-flex ">
+                        <button type="button" mdbBtn class="default-color " (click)=addrooms() mdbWavesEffect>+</button>
+                        <!-- {{rooms}} -->
+                        <div class="md-form mt-1 roomdiv">
+                            <input formControlName="room_amount" mdbInput type="text" id="form3" class="mx-1 form-control">
+                            <!-- <label for="form1" class="">Example label</label> -->
+                        </div>
+                        <button type="button" mdbBtn class="default-color" (click)=removerooms()
+                            mdbWavesEffect>-</button>
+                    </div>
+
+                    <div class="md-form">
+                        <textarea formControlName="facts" type="text" id="form7" class="md-textarea md-textarea-auto form-control"
+                            mdbInput></textarea>
+                        <label for="form7">point attractive facts</label>
+                    </div>
+    </form>
+    <form [formGroup]="roomfacility">
+        <div class="mt-5">
+            <p>select facility for room</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <mdb-checkbox formControlName="city_view" [default]="true">city view</mdb-checkbox>
+                    <mdb-checkbox formControlName="free_wifi" [default]="true">Free wifi</mdb-checkbox>
+                    <mdb-checkbox formControlName="air_conditioning" [default]="true">Air conditioning</mdb-checkbox>
+
+                    <mdb-checkbox formControlName="bathroom" [default]="true">Bathroom</mdb-checkbox>
+                </div>
+                <div class="col-md-4">
+                    <mdb-checkbox formControlName="tv" [default]="true">TV</mdb-checkbox>
+                    <mdb-checkbox formControlName="satalite_channel" [default]="true">satalite channel</mdb-checkbox>
+                    <mdb-checkbox formControlName="iron" [default]="true">iron</mdb-checkbox>
+                    <mdb-checkbox formControlName="showers" [default]="true">showers</mdb-checkbox>
+                </div>
+                <div class="col-md-4">
+                    <mdb-checkbox formControlName="telephone" [default]="true">Telephone</mdb-checkbox>
+                    <mdb-checkbox formControlName="dryer" [default]="true">Dryer</mdb-checkbox>
+                    <mdb-checkbox formControlName="slipers" [default]="true">slipers</mdb-checkbox>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="col-md-3">
+
+</div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row mt-3 d-flex justify-content-end">
+                <div>
+                    <button mdbBtn flat="true" size="sm">Cancel</button>
+                    <button mdbBtn color="primary" size="sm" (click)=saveRoomDetails()>save</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+</div>
+
+</div>

@@ -10,6 +10,7 @@ import { WelcomownerComponent } from './owner/welcomowner/welcomowner.component'
 import { TutorialComponent } from './owner/tutorial/tutorial.component';
 import { BasicsComponent } from './owner/newhotel/basics/basics.component';
 import { FacilitiesComponent } from './owner/newhotel/facilities/facilities.component';
+import { RoomsComponent } from './owner/newhotel/rooms/rooms.component';
 
 const routes: Routes=[
   {path: '', component: HomeComponent},
@@ -24,7 +25,8 @@ const routes: Routes=[
           children:[
             {path:'',redirectTo:'basics',pathMatch:'full'},
             {path:'basics',component:BasicsComponent},
-            {path:'facilities',component:FacilitiesComponent}
+            {path:'facilities',component:FacilitiesComponent},
+            {path:'rooms',component:RoomsComponent}
           ]},
   ]},
   

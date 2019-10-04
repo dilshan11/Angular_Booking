@@ -61,7 +61,7 @@ fieldvalue=[];
         console.log(this.propertobject);
         this.basicservice.store_basicform(this.propertobject).
         subscribe(data=>{
-          console.log("faci")
+          this.dataservice.setHotelid(data);
             this.router.navigateByUrl('/owners/newHotel/facilities');
         });
     }

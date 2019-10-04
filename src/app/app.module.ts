@@ -17,6 +17,7 @@ import { WelcomownerComponent } from './owner/welcomowner/welcomowner.component'
 import { TutorialComponent } from './owner/tutorial/tutorial.component';
 import { BasicsComponent } from './owner/newhotel/basics/basics.component';
 import { FacilitiesComponent } from './owner/newhotel/facilities/facilities.component';
+import { RoomsComponent } from './owner/newhotel/rooms/rooms.component';
  
 
 @NgModule({
@@ -33,6 +34,7 @@ import { FacilitiesComponent } from './owner/newhotel/facilities/facilities.comp
     TutorialComponent,
     BasicsComponent,
     FacilitiesComponent,
+    RoomsComponent,
     
   ],
   imports: [
