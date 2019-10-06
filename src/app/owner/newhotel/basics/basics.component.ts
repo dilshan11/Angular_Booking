@@ -11,6 +11,7 @@ declare var ol: any;
   styleUrls: ['./basics.component.scss']
 })
 export class BasicsComponent implements OnInit {
+  file: File;
   latitude: number = 18.5204;
   longitude: number = 73.8567;
   ownDetals;
@@ -50,6 +51,13 @@ fieldvalue=[];
         console.log(this.ownDetals);
   }
 
+  onFileAdd(file: File) {
+    this.file = file;
+    }
+    
+    onFileRemove() {
+    this.file = null;
+    }
 
   submitPropertyForm(){ 
     if(this.validate_field()){
@@ -57,11 +65,12 @@ fieldvalue=[];
        this.propertobject.sadress =this.basicform.get('sadress').value;
         this.propertobject.village =this.basicform.get('village').value;
         this.propertobject.city =this.basicform.get('city').value;
-        this.propertobject.ownerId=this.ownDetals.id;
-        console.log(this.propertobject);
+        this.propertobject.ownerId=Number(sessionStorage.getItem('ownerId'));
+         
         this.basicservice.store_basicform(this.propertobject).
         subscribe(data=>{
           this.dataservice.setHotelid(data);
+          sessionStorage.setItem('hotelId',data.toString());
             this.router.navigateByUrl('/owners/newHotel/facilities');
         });
     }

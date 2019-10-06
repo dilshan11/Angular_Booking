@@ -41,6 +41,7 @@ export class FacilitiesComponent implements OnInit {
 
   ngOnInit() {
     this.hotelid=this.dataservice.hotelid;
+    
   }
 
   sendfacility_form(){

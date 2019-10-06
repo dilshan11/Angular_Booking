@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DataService } from 'src/app/data.service';
+import { BasicService } from '../basic.service';
 
 @Component({
   selector: 'app-rooms',
@@ -32,7 +33,7 @@ export class RoomsComponent implements OnInit {
     dryer:new FormControl(),
     slipers:new FormControl(),
   })
-  constructor(private dataservice:DataService) { }
+  constructor(private dataservice:DataService,private basicService:BasicService) { }
 
   ngOnInit() {
      this.room.get('sleppers').setValue(this.a1);
@@ -60,8 +61,16 @@ export class RoomsComponent implements OnInit {
 
   }
   saveRoomDetails(){
-    console.log(this.dataservice.hotelid);
-    console.log(this.room.value);
-    console.log(this.roomfacility.value)
+    this.basicService.storeRooms(this.room.value)
+    .subscribe(data=>{
+      this.basicService.storeRoomfacility(this.roomfacility.value,data)
+      .subscribe(data2=>{
+        console.log(data2);
+        this.room.reset();
+        this.roomfacility.reset();
+      
+      })
+    });
+    
   }
 }

@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     
   }
   checkloginc(){
-
+    
     this.createlogin();                 // make logindata object for send to backend
     if(this.userfrom.get('userst').value==1){ // user checked
     this.custservice.checkloginsUser(this.logindata)

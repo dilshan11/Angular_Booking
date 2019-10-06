@@ -14,6 +14,12 @@ export class BasicService {
    return this.http.post(this.url+'/owner/basicform',propertobj);
   }
   storefacilities(facility){
-   return this.http.post(this.url+'/owner/facilityform?hotelid='+this.dataservice.hotelid,facility);
+   return this.http.post(this.url+'/owner/facilityform?hotelid='+Number(sessionStorage.getItem('hotelId')),facility);
+  }
+  storeRooms(rooms){
+   return this.http.post(this.url+'/rooms/saveroom?hotelid='+Number(sessionStorage.getItem('hotelId')),rooms);
+  }
+  storeRoomfacility(roomfacility,roomid){
+    return this.http.post(this.url+'/rooms/facility?roomid='+roomid,roomfacility);
   }
 }
