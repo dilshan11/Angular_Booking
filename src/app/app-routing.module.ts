@@ -11,9 +11,11 @@ import { TutorialComponent } from './owner/tutorial/tutorial.component';
 import { BasicsComponent } from './owner/newhotel/basics/basics.component';
 import { FacilitiesComponent } from './owner/newhotel/facilities/facilities.component';
 import { RoomsComponent } from './owner/newhotel/rooms/rooms.component';
+import { FristComponent } from './frist/frist.component';
 
 const routes: Routes=[
-  {path: '', component: HomeComponent},
+  {path: '', component: FristComponent},
+  {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'reg',component:RegisterComponent},
   {path:'owners',component:WelcomownerComponent, // owner navigation load to this router outlet

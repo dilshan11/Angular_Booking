@@ -18,6 +18,7 @@ import { TutorialComponent } from './owner/tutorial/tutorial.component';
 import { BasicsComponent } from './owner/newhotel/basics/basics.component';
 import { FacilitiesComponent } from './owner/newhotel/facilities/facilities.component';
 import { RoomsComponent } from './owner/newhotel/rooms/rooms.component';
+import { FristComponent } from './frist/frist.component';
  
 
 @NgModule({
@@ -35,6 +36,7 @@ import { RoomsComponent } from './owner/newhotel/rooms/rooms.component';
     BasicsComponent,
     FacilitiesComponent,
     RoomsComponent,
+    FristComponent,
     
   ],
   imports: [
