@@ -1,67 +1,120 @@
- <!-- frist div for topic -->
-
-<div class="homediv p-4">
-    <form>
-        <div class="container  ">
-
-            <div class="row">
-
-                <div class="col-md-9 p-0">
-                    <h3 class="font-weight-bolder mt-4">All the little things (and big things) you provide.</h3>
-                    <p>What comes with your home?</p>
-                </div>
-                <div class="col-md-3 ">
-
-                    <img src="../../../../assets/service.jpg" class="img-fluid" alt="Responsive image">
-                </div>
-
-            </div>
+<div class="container-fluid mt-5 ml-3 mr-5">
+    <div class="row">
+        <!-- <div class="col-md-3 yellow">1</div>
+        <div class="col-md-3 red">2</div>
+        <div class="col-md-3 orange">3</div>
+        <div class="col-md-3 red">3</div> -->
+        <div class="col-md-1 red" >
+           <h1>1</h1>
         </div>
-        <!-- frist div for topic -->
-        <div class="mx-3"><h5>Facilities</h5></div>
-        <!-- basic information -->
-        <div class="container ">
-            <div class="row">
-                <div class="col-md-9 p-4 white border border-default-color rounded mb-0">
-
-
-                </div>
-                <div class="col-md-3">
-                    
-                </div>
-            </div>
+        <div class="col-md-1 yellow">
+            <h1>2</h1>
         </div>
-
-
-
-
-        <div class="mx-3 mt-5">Location</div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9 p-4 white border border-default-color rounded mb-0">
-
-
-
-                </div> 
-                <div class="col-md-3"></div>
-            </div>
+        <div class="col-md-1">
+            <h1>3</h1>
         </div>
-    </form>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                <div class="row mt-3 d-flex justify-content-end">
-                    <div>
-                        <button mdbBtn flat="true" size="sm">Cancel</button>
-                        <button mdbBtn color="primary" size="sm">Next</button>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-3">
-
-            </div>
+        <div class="col-md-1" >
+            <h1>4</h1>
         </div>
+        <div class="col-md-1" >
+            <h1>5</h1>
+        </div>
+        <div class="col-md-1" >
+            <h1>6</h1>
+        </div>
+        <div class="col-md-1" >
+            <h1>1</h1>
+         </div>
+         <div class="col-md-1">
+             <h1>2</h1>
+         </div>
+         <div class="col-md-1" >
+             <h1>3</h1>
+         </div>
+         <div class="col-md-1" >
+             <h1>4</h1>
+         </div>
+         <div class="col-md-1" >
+             <h1>5</h1>
+         </div>
+         <div class="col-md-1 red" >
+             <h1>6</h1>
+         </div>
+         
     </div>
+</div>
+<div>
+    <!-- <h1>{{a}}</h1> -->
+    <h1>{{b}}</h1>
+    <!-- <h1>{{}}</h1> -->
+</div>
+<div class="container-fluid mt-5 ml-3 mr-5">
+        <div class="row">
+            <div class="col-md-12">
+                    
+                    <!-- Editable table -->
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Editable table</h3>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2">
+          <a class="text-success" (click)="add()">
+            <mdb-icon fas icon="plus" size="2x"></mdb-icon>
+          </a>
+        </span>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <tr>
+            <th class="text-center">Person Name</th>
+            <th class="text-center">Age</th>
+            <th class="text-center">Company Name</th>
+            <th class="text-center">Country</th>
+            <th class="text-center">City</th>
+            <th class="text-center">Sort</th>
+            <th class="text-center">Remove</th>
+          </tr>
+          <tr *ngFor="let person of personList; let id = index">
+            <td>
+              <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'age', $event)">{{person.age}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'companyName', $event)">{{person.companyName}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'country', $event)">{{person.country}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
+            </td>
+            <td>
+              <span class="table-up">
+                <a class="indigo-text">
+                  <mdb-icon fas icon="long-arrow-alt-up"></mdb-icon>
+                </a>
+              </span>
+              <span class="table-down">
+                <a class="indigo-text">
+                  <mdb-icon fas icon="long-arrow-alt-down"></mdb-icon>
+                </a>
+              </span>
+            </td>
+            <td>
+              <span class="table-remove">
+                <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Editable table -->
 
+
+
+
+            </div>
+        </div>
 </div>

@@ -23,7 +23,9 @@ export class DataService {
   // }
   public passownerobject(own){
     this.ownerdetails=own;
+    sessionStorage.setItem("owner_id",this.ownerdetails.id);
   }
+
   public setHotelid(hid){
     this.hotelid=hid;
   }

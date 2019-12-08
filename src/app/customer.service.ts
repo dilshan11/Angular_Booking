@@ -19,11 +19,11 @@ export class CustomerService {
     })
   }
   public checkloginsUser(logindetails){
-    console.log(logindetails);
+    
     return this.http.post("http://localhost:8080/customer/login",logindetails)
   }
   public checkloginsOwner(logindetails){
-    console.log(logindetails);
+    
     return this.http.post("http://localhost:8080/owner/login",logindetails)
   }
   public saveUserRegisterDetailss(registerDetails){

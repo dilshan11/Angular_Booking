@@ -1,1 +1,31 @@
-<p>booking works!</p>
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-4 mt-5" *ngFor="let a of b">
+            <mdb-card>
+                <!--Card image-->
+                <mdb-card-img class="pimage" [src]="a.imageinput" alt="Card image cap"></mdb-card-img>
+                <!--Card content-->
+                <mdb-card-body>
+              
+                  <!--Title-->
+                  <mdb-card-title>
+                    <h4>{{a.pname}}</h4>
+                  </mdb-card-title>
+              
+                  <!--Text-->
+                  <mdb-card-text>  
+                    {{a.adress}}
+                  </mdb-card-text>
+              
+                  <a href="#" [routerLink]="['roombook',a.hotelid]" mdbBtn color="primary" mdbWavesEffect>Button</a>
+                </mdb-card-body>
+              </mdb-card>
+        </div>
+
+        
+
+
+        
+    </div>
+</div>

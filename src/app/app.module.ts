@@ -19,6 +19,7 @@ import { BasicsComponent } from './owner/newhotel/basics/basics.component';
 import { FacilitiesComponent } from './owner/newhotel/facilities/facilities.component';
 import { RoomsComponent } from './owner/newhotel/rooms/rooms.component';
 import { FristComponent } from './frist/frist.component';
+import { RoombookComponent } from './roombook/roombook.component';
  
 
 @NgModule({
@@ -37,6 +38,7 @@ import { FristComponent } from './frist/frist.component';
     FacilitiesComponent,
     RoomsComponent,
     FristComponent,
+    RoombookComponent,
     
   ],
   imports: [

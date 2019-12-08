@@ -1,25 +1,39 @@
 <div class="container-fluid basicdiv">
     <div class="row">
         <div class="col-md-12 teal lighten-1 mt-3 fristdiv">
-        <form>
-            <div class="w-25 mx-5  mt-4 datepicdiv white p-3">
+        <form [formGroup]="datepicker">
+            <div class=" mx-5  mt-4 datepicdiv white p-3">
                 <div class=""> 
                     
                        <h4 class="font-weight-bold"> Find a place to stay</h4>
                        <h6 >Destinations and properties around the world...</h6>
                 </div>
-                <div class="">
-                        <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+                <div >
+                        <input formControlName="location" type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="colombo">
 
                 </div>
                 <div class=" datepicker d-flex justify-content-between ">
-                    <div class="blue"><input class="m-0 green" type="date" name="bday"></div>
-                    <div ><input class="m-0 orange" type="date" name="bday1"></div>
+                    <div><p class="mb-1">check in</p><input formControlName="checkin" type="date" name="bday"></div>
+                    <div ><p class="mb-1">check out</p><input formControlName="checkout" type="date" name="bday1"></div>
                 </div>
+                <!-- <div mt-5> -->
+                    <p class="mt-3 mb-1">rooms</p>
+                <!-- </div> -->
                 <div>
-                    rw
+                    
+                        <select formControlName="rooms" class="browser-default custom-select">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                        </select>
+
+                </div>
+                <div class="d-flex justify-content-end my-0">
+                    <button type="button" (click)="find_hotel()" mdbBtn color="primary" mdbWavesEffect>Find</button>
                 </div>
             </div>
+            
 
         </form>
             <!-- <form>
